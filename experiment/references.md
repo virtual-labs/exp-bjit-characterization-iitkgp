@@ -1,9 +1,9 @@
 ## References
 #### Books
-1) Christian C. Enz and Eric A. Vittoz, Charge-Based MOS Transistor Modeling: The EKV model for low-power and RF IC design, Wiley, 2006
+1) Microelectronic Circuits - Adel S. Sedra and Kenneth C. Smith (7th Edition, Oxford University Press)
 
-2) S. M. Sze and Kwok K. Ng, Physics of Semiconductor Devices, Wiley, 2006
+2) Electronic Devices and Circuit Theory - Robert L. Boylestad and Louis Nashelsky (11th Edition,Pearson)
 
 #### Video Lectures
-- [MOS capacitor](https://www.youtube.com/watch?v=Gwyi2brc0QQ)
+- [Semiconductor device modeling and Simulation](https://onlinecourses.nptel.ac.in/noc23_ee35/preview)
 
