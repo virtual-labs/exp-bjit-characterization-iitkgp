@@ -7,7 +7,7 @@
 <b>Discipline | <b> Electronic Engineering 
 :--|:--|
 <b> Lab | <b> **Microelectronics and VLSI Engineering Laboratory**
-<b> Experiment|     <b> **PMOS Capacitor Band Diagram**
+<b> Experiment|     <b> **BJT Characterization (Gummel Plot)**
 
 
 ### About the Experiment 
