@@ -1,13 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJT Characterization (Gummel Plot)</title>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
-</body>
-</html>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/adik.css" rel="stylesheet">
+
+    <!-- jQuery and jQuery UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- MathJax -->
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Math.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.min.js"></script>
+
+    <!-- jQuery Knob -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+
+    <!-- CanvasJS -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="./js/PTrainer.js"></script>
+  
+</head>
+<body><!--body tag start-->
+    <div class="container p-3 my-3 text-primary text-center border"><!--First Container under body tag start-->
+        <div class="row"><!--First row under 1st container start-->
+            <div class="col-md-3"><!--First col under 1st row start-->
+                <img class="img-fluid rounded" src="./images/vlabs.png" alt="VLabs logo">
+            </div><!--First col under 1st row end-->
+            <div class="col-md-6"><!--2nd col under 1st row start-->
+                <p class="display-1"> <b> Virtual Labs <br> IIT Kharagpur </b> </p>
+            </div><!--2nd col under 1st row end-->
+            <div class="col-md-3"><!--3rd col under 1st row start-->
+                <img class="img-fluid rounded" src="./images/iitkgp.png" alt="IIT KGP Logo" >
+            </div><!--3rd col under 1st row end-->
+        </div><!--First row under 1st container end-->
+    
+        <hr>
+        <div class="row"><!--2nd row under 1st container start-->
+            <div class="col-md-3"><!--First col under 2nd row start-->
+
+            </div><!--First col under 2nd row end-->
+            <div class="col-md-6"><!--2nd col under 2nd row start-->
+                <p class="h1"> <b>BJT Characterization (Gummel Plot)</b> </p>
+            </div><!--2nd col under 2nd row end-->
+            <div class="col-md-3"><!--3rd col under 2nd row start-->
+
+            </div><!--3rd col under 2nd row end-->
+        </div><!--2nd row under 1st container end-->
+        <hr>
+        <div class="d-flex p-1 text-primary"><!--3rd row under 1st container start-->
+          <div class="p-1" > <p class="h4"><a href="../index.html"> <span class="LN"> <b> Microelectronics and VLSI Engineering Laboratory </b></span> --> </a></p></div>
+          <div class="p-1"> <p class="h4"><a href="./index.html"> <span class="ExpN"> <b> BJT Characterization (Gummel Plot)</b> </span> </a></p></div>
+        </div><!--3rd row under 1st container end-->
+    </div><!--First Container under body tag end-->
+    
+    <div class="container p-3 my-5 text-primary text-center border"><!--2nd Container under body tag start-->
+        <div class="row"><!--First row under 2nd container start-->
+
+            <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Introduction</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../aim.html">Objective</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../prequiz.html">Pre Quiz</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../theory.html">Theory</a>
+                </li>
+				<li class="nav-item">
+                  <a class="nav-link" href="../procedure.html">Procedure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./index.html">Simulation</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../postquiz.html">Post Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../feedback.html">Feedback</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../references.html">References</a>
+                  </li>
+
+              </ul>
+        </div><!--First row under 2nd container end-->
+    </div><!--2nd Container under body tag end-->
+	
+    <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
+      <div class="row"><!--First row under 3rd container start-->
+        <div class="col-md-1"></div><!--First col under 3rd container start& end-->
+        <div class="col-md-10"><!--2nd col under 3rd container start-->
+            <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
+              <div id="inst" style="display:block;height:200px;overflow-y:auto;text-align:justify">
+					<ol>
+					
+					
+                      <li>Enter Saturation Current (I_S) (A) in the input feild </li>
+					  <li>Enter Current Gain (β) in the input feild </li>
+					  <li>Enter Start V_BE (V) in the input feild </li>
+					  <li>Enter End V_BE (V) in the input feild </li>
+					  <li>Enter Number of Points in the input feild </li>
+					  <li>Enter Thermal Voltage (V_T) in the input feild </li>
+					  <li>Click on 'Generate Plot' button to get the Gummel Plot graph</li><br/>
+					  
+					  
+					<br><br>
+					</ol>
+	
+					
+					
+		   </div>
+            </p> 
+          </div><!--2nd col under 3rd container end-->
+		  
+        <div class="col-md-1"></div><!--3rd col under 3rd container start& end-->
+      </div><!--First row under 3rd container end-->
+    </div><!--3rd Container under body tag end-->
+	
+   <!--simulation start -->
+   <div>
+    <div class="container">
+        <h1>Gummel Plot Simulation of NPN BJT</h1>
+        <div class="inputs-container">
+            <div class="input-group">
+                <label for="i_s">Saturation Current (I_S) (A)</label>
+                <input type="number" id="i_s" placeholder="Saturation Current (I_S)" step="1e-18" value="1e-15">
+            </div>
+            <div class="input-group">
+                <label for="beta">Current Gain (β)</label>
+                <input type="number" id="beta" placeholder="Current Gain (β)" value="100">
+            </div>
+            <div class="input-group">
+                <label for="v_be_start">Start V_BE (V)</label>
+                <input type="number" id="v_be_start" placeholder="Start V_BE (V)" step="0.01" value="0.5">
+            </div>
+            <div class="input-group">
+                <label for="v_be_end">End V_BE (V)</label>
+                <input type="number" id="v_be_end" placeholder="End V_BE (V)" step="0.01" value="0.9">
+            </div>
+            <div class="input-group">
+                <label for="points">Number of Points</label>
+                <input type="number" id="points" placeholder="Number of Points" value="100">
+            </div>
+            <div class="input-group">
+                <label for="v_t">Thermal Voltage (V_T)</label>
+                <input type="number" id="v_t" placeholder="Thermal Voltage (V_T)" step="0.001" value="0.025">
+            </div>
+        </div>
+        <button onclick="generateGummelPlot()">Generate Plot</button>
+        <div class="plot-container">
+            <canvas id="gummelPlot"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        let chart;
+
+        function generateGummelPlot() {
+            const ctx = document.getElementById('gummelPlot').getContext('2d');
+
+            // Get user inputs
+            const I_S = parseFloat(document.getElementById('i_s').value);
+            const beta = parseFloat(document.getElementById('beta').value);
+            const V_BE_start = parseFloat(document.getElementById('v_be_start').value);
+            const V_BE_end = parseFloat(document.getElementById('v_be_end').value);
+            const points = parseInt(document.getElementById('points').value);
+            const V_T = parseFloat(document.getElementById('v_t').value);
+
+            // Data generation for I_B and I_C
+            const V_BE = [];
+            const I_B = [];
+            const I_C = [];
+
+            for (let i = 0; i <= points; i++) {
+                let V = V_BE_start + (V_BE_end - V_BE_start) * i / points;
+                V_BE.push(V.toFixed(2));
+                I_B.push(I_S * (Math.exp(V / V_T) - 1));
+                I_C.push(beta * I_B[I_B.length - 1]);
+            }
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: V_BE,
+                    datasets: [
+                        {
+                            label: 'I_B (Base Current)',
+                            data: I_B,
+                            borderColor: 'red',
+                            fill: false,
+                            yAxisID: 'y',
+                        },
+                        {
+                            label: 'I_C (Collector Current)',
+                            data: I_C,
+                            borderColor: 'blue',
+                            fill: false,
+                            yAxisID: 'y',
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            title: {
+                                display: true,
+                                text: 'V_be (V)',
+                            },
+                        },
+                        y: {
+                            type: 'logarithmic',
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'I_c, I_b (A)',
+                            },
+                            ticks: {
+                                callback: function (value, index, values) {
+                                    return Number(value.toString());
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</div>
+   <!--simulation end -->
+   
+
+    <div class="container p-3 my-5 text-primary text-center border"><!--Last and fifth container under body tag start-->
+      <div class="row">
+        <footer>
+          <div class="row ce">
+            <div class="col-sm-12">
+              <p class="h5"><i> Copyright ©2022 <a href="http://vlabs.iitkgp.ac.in/vlt/">Virtual Labs IIT Kharagpur</a> </i><br><br>
+              <a href="../../license/index.html" target="_blank"> Licensing Terms </a>
+            </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+  </div><!--Last and fifth container under body tag end-->
+
+  
+	 
+</body><!--body tag end-->
+</html><!--html tag end-->
