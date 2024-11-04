@@ -53,7 +53,7 @@ Procedure:
 ### 6\. Analysis:
 
 *   Analyze plotted data to determine:
-    *   Saturation current (I<sub>S<sub>), current gain (β), and other parameters.
+    *   Saturation current (I<sub>S</sub>), current gain (β), and other parameters.
     *   Compare with theoretical expectations for validation.
 
 ### 7\. Documentation and Reporting:
