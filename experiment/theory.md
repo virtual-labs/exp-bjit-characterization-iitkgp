@@ -11,22 +11,22 @@ Operating Regions of BJT
 
 A BJT has three main operating regions:
 
-*   **Cut-off Region:** Both `IB` and $$I_C$$ are very small.
+*   **Cut-off Region:** Both I<sub>B</sub> and I<sub>C</sub> are very small.
 *   **Active Region:** The transistor operates as an amplifier.
 *   **Saturation Region:** The transistor is fully turned on.
 
 Key Equations
 -------------
 
-### Collector Current ($$I_C$$):
+### Collector Current (I<sub>C</sub>):
 
 $$I_C = I_S (e^{V_{BE}/V_T} - 1)$$
 
 Where:
 
-*   $$I_S$$ is the saturation current.
-*   $$V_{BE}$$ is the base-emitter voltage.
-*   $$V_T$$ is the thermal voltage.
+*   I<sub>S</sub> is the saturation current.
+*   V<sub>BE</sub> is the base-emitter voltage.
+*   V<sub>T</sub> is the thermal voltage.
 
 ### Base Current ($$I_B$$):
 
@@ -39,8 +39,8 @@ Gummel Plot Analysis
 
 The Gummel plot involves plotting:
 
-1.  **$$I_B$$ vs $$V_{BE}$$:** Shows exponential relationship.
-2.  **$$I_C$$ vs $$V_{BE}$$:** Also shows exponential relationship.
+1.  **I<sub>B</sub> vs V<sub>BE<sub>:** Shows exponential relationship.
+2.  **I<sub>C</sub> vs V<sub>BE</sub>:** Also shows exponential relationship.
 
 Importance of Gummel Plot
 -------------------------
