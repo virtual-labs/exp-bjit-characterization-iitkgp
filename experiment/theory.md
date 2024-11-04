@@ -48,6 +48,6 @@ Importance of Gummel Plot
 *   **Parameter Extraction:** Enables extraction of key parameters such as I<sub>S</sub>, &beta; and the ideality factor of the transistor.
 *   **Device Characterization:** Provides understanding of the transistor's behavior.
 *   **Circuit Design:** Essential for designing circuits using BJTs.
-*   
+   
  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>    
  
