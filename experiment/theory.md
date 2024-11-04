@@ -45,7 +45,7 @@ The Gummel plot involves plotting:
 Importance of Gummel Plot
 -------------------------
 
-*   **Parameter Extraction:** Enables extraction of key parameters such as `IS`, `β`, and the ideality factor of the transistor.
+*   **Parameter Extraction:** Enables extraction of key parameters such as I<sub>S</sub>, &beta; and the ideality factor of the transistor.
 *   **Device Characterization:** Provides understanding of the transistor's behavior.
 *   **Circuit Design:** Essential for designing circuits using BJTs.
 *   
