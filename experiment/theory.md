@@ -28,7 +28,7 @@ Where:
 *   V<sub>BE</sub> is the base-emitter voltage.
 *   V<sub>T</sub> is the thermal voltage.
 
-### Base Current ($$I_B$$):
+### Base Current (I<sub>B</sub>):
 
 $$I_B = I_C / β$$
 
