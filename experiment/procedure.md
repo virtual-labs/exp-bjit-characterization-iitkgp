@@ -25,7 +25,7 @@ Procedure:
 
 *   Launch the software interface for the HP 4145B (typically PC-based).
 *   Configure measurement settings:
-    *   Select measurement type: typically current-voltage (I-V) characteristics for both base-emitter voltage ($$V_{BE}$$) and collector current ($$I_C$$).
+    *   Select measurement type: typically current-voltage (I-V) characteristics for both base-emitter voltage (V<sub>BE</sub>) and collector current (I<sub>C</sub>).
     *   Set measurement ranges and compliance limits.
 
 ### 3\. BJT Mounting and Connections:
@@ -37,23 +37,23 @@ Procedure:
 ### 4\. Measurement Sequence:
 
 *   **Biasing the BJT:**
-    *   Apply small base-emitter voltage ($$V_{BE}$$) to start measurement.
-    *   Incrementally increase $$V_{BE}$$ while measuring base current ($$I_B$$) and collector current ($$I_C$$).
+    *   Apply small base-emitter voltage (V<sub>BE</sub>) to start measurement.
+    *   Incrementally increase V<sub>BE</sub> while measuring base current (I<sub>B</sub>) and collector current (I<sub>C<sub>).
 *   **Data Collection:**
-    *   HP 4145B will measure and record $$I_B$$ and $$I_C$$ for each $$V_{BE}$$ point.
+    *   HP 4145B will measure and record I<sub>B</sub> and I<sub>C</sub> for each V<sub>BE</sub> point.
     *   Ensure stable measurements within compliance limits.
 
 ### 5\. Plotting the Gummel Plot:
 
 *   Use HP 4145B software to plot:
-    *   $$I_B$$ vs $$V_{BE}$$
-    *   $$I_C$$ vs $$V_{BE}$$
+    *   I<sub>B</sub> vs V<sub>BE</sub>
+    *   I<sub>C</sub> vs V<sub>BE</sub>
 *   Adjust plot settings for clear representation of exponential relationships.
 
 ### 6\. Analysis:
 
 *   Analyze plotted data to determine:
-    *   Saturation current ($$I_S$$), current gain (β), and other parameters.
+    *   Saturation current (I<sub>S</sub>), current gain (β), and other parameters.
     *   Compare with theoretical expectations for validation.
 
 ### 7\. Documentation and Reporting:
