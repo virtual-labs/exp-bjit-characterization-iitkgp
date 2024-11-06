@@ -1,7 +1,9 @@
 ## Procedure
+<div align="center">
 <img src="images/tf.png"  />
   
 **Fig. 1. HP 16058 test fixture**
+</div>
 
 **Steps to perform the real measurement in HP 4145B Semiconductor Parameter Analyzer**  
 
