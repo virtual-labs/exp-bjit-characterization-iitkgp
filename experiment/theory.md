@@ -2,10 +2,10 @@
 **Introduction:**  
 The Gummel plot is a fundamental tool in semiconductor device characterization, providing insights into the behavior and parameters of BJTs essential for practical application in electronic circuits. A typical Gummel Plot shown in Figure 1: 
 
+<div align="center">
 <img src="images/man1.jpg"  />
-
 **Fig. 1. Circuit diagram**
-
+</div>
 Operating Regions of BJT
 ------------------------
 
