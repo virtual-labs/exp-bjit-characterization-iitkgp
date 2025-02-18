@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJT Characterization (Gummel Plot)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            margin: 20px 0;
+        }
+        #plot {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        
+        <div class="card p-3">
+            <h5 class="bg-success text-white text-center p-2">Instructions</h5>
+            <div id="inst" class="p-3" style="max-height:200px; overflow-y:auto;">
+                <ol>
+                    <li>Enter Saturation Current (I_S) in amperes.</li>
+                    <li>Enter Current Gain (β).</li>
+                    <li>Enter Start and End V_BE (V).</li>
+                    <li>Specify Number of Points and Thermal Voltage (V_T).</li>
+                    <li>Click on 'Generate Plot' to view the Gummel Plot.</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5 class="text-center">Input Parameters</h5>
+                    <div class="mb-2">
+                        <label class="form-label">Saturation Current (I_S) (A)</label>
+                        <input type="number" id="is" class="form-control" value="1e-15" step="1e-16">
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Current Gain (β)</label>
+                        <input type="number" id="beta" class="form-control" value="100" step="1">
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Start V_BE (V)</label>
+                        <input type="number" id="startVbe" class="form-control" value="0" step="0.01">
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">End V_BE (V)</label>
+                        <input type="number" id="endVbe" class="form-control" value="1" step="0.01">
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Number of Points</label>
+                        <input type="number" id="numPoints" class="form-control" value="100" step="1">
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Thermal Voltage (V_T)</label>
+                        <input type="number" id="vt" class="form-control" value="0.09" step="0.001">
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="updatePlot()">Generate Plot</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5 class="text-center">Gummel Plot</h5>
+                    <div id="plot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function calculateGummelPlot(is, beta, startVbe, endVbe, numPoints, vt) {
+            const vbe = [], ic = [], ib = [];
+            const step = (endVbe - startVbe) / (numPoints - 1);
+            for (let i = 0; i < numPoints; i++) {
+                const v = startVbe + i * step;
+                vbe.push(v);
+                ic.push(is * (Math.exp(v / vt) - 1));
+                ib.push((is / beta) * (Math.exp(v / vt) - 1));
+            }
+            return { vbe, ic, ib };
+        }
+
+        function updatePlot() {
+            const is = parseFloat(document.getElementById('is').value);
+            const beta = parseFloat(document.getElementById('beta').value);
+            const startVbe = parseFloat(document.getElementById('startVbe').value);
+            const endVbe = parseFloat(document.getElementById('endVbe').value);
+            const numPoints = parseInt(document.getElementById('numPoints').value);
+            const vt = parseFloat(document.getElementById('vt').value);
+            
+            const { vbe, ic, ib } = calculateGummelPlot(is, beta, startVbe, endVbe, numPoints, vt);
+            
+            Plotly.newPlot('plot', [
+                { x: vbe, y: ic, mode: 'lines', name: 'I_C (Collector Current)', line: { color: 'blue' } },
+                { x: vbe, y: ib, mode: 'lines', name: 'I_B (Base Current)', line: { color: 'red' } }
+            ], {
+                title: 'Gummel Plot',
+                xaxis: { title: 'V_BE (V)' },
+                yaxis: { title: 'Current (A)', type: 'log' },
+                showlegend: true
+            });
+        }
+
+        // Initial plot
+        updatePlot();
+    </script>
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>
